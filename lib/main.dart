@@ -8,6 +8,7 @@ import 'package:kls_project/model/VideoModel.dart';
 import 'package:kls_project/screen/PlayListScreen.dart';
 import 'package:kls_project/screen/SettingsScreen.dart';
 import 'package:kls_project/screen/YoutubeSearchScreen.dart';
+import 'package:kls_project/services/GlobalSnackBar.dart';
 import 'package:kls_project/services/PlayListState.dart';
 import 'package:kls_project/services/YoutubeSearchState.dart';
 import 'package:kls_project/theme/theme.dart';
@@ -51,6 +52,8 @@ class NavigationBarApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: Provider.of<ChangeThemeMode>(context).themeData,
+      // 글로벌 ScaffoldMessenger 키 설정
+      scaffoldMessengerKey: GlobalSnackBar.key,
       home: const NavigationExample(),
     );
   }
